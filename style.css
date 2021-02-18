@@ -16,9 +16,10 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   min-height: 100vh;
-  margin: 10% 0;
+  margin: 0;
+  margin-top: 100px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 10% 6%;
 }
@@ -40,10 +41,10 @@
   text-align: center;
   font-weight: 600;
   font-size: 32px;
-  text-shadow: .1px .2px black;
   opacity: .8;
   margin-bottom: 5%;
   margin-top: 0;
+  color: var(--softRed);
 }
 
 .image-wrapper {
@@ -61,10 +62,10 @@
   top: -142px;
   left: -16px;
   width: 300px;
-  /* height: 240px; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+}
+
+.desktop, .box {
+  visibility: hidden;
 }
 
 .faqs {
@@ -94,6 +95,7 @@
 
 .faq__question--active {
   font-weight: 700;
+  color: var(--softRed);
 }
 
 .faq__btn {
@@ -120,7 +122,79 @@
 
 .faq__answer--active {
   opacity: 1;
-  max-height: 9em;
+  max-height: 12em;
   transition: all .5s linear;
   will-change: opacity, max-height;
+}
+
+
+@media(min-width: 1050px) {
+  .page {
+    padding: 2% 5%;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    max-height: 400px;
+    padding: 225px 4%;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: -100px;
+    background-position-y: 30px;
+  }
+
+  .image-wrapper {
+    background: none;
+  }  
+
+  .container__image {
+    top: -100px;
+    left: -150px;
+    width: 500px;
+  }
+
+  .desktop, .box {
+    visibility: visible;
+  }
+
+  .box {
+    width: 191px;
+    height: 184px;
+    position: absolute;
+    top: 50px;
+    left: -172px;
+    transition: all 1s ease-in-out;
+  }
+
+  .box--active {
+    transform: translateX(-20px);
+  }
+
+  .mobile {
+    visibility: hidden;
+  }
+
+  .container__title {
+    position: relative;
+    top: -160px;
+    left: 63px;
+  }
+
+  .faqs {
+    max-width: 50%;
+  }
+
+  .faq__question {
+    transition: .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    cursor: pointer;
+  }
+
+  .faq__question:hover {
+    color: var(--softRed);
+  }
 }
