@@ -127,7 +127,6 @@
   will-change: opacity, max-height;
 }
 
-
 @media(min-width: 1050px) {
   .page {
     padding: 2% 5%;
@@ -196,5 +195,22 @@
 
   .faq__question:hover {
     color: var(--softRed);
+  }
+}
+
+@media(min-width: 1200px) {
+  .container__image {
+    top: -100px;
+    left: -200px;
+    width: 500px;
+  }
+
+  .box {
+    width: 191px;
+    height: 184px;
+    position: absolute;
+    top: 40px;
+    left: -200px;
+    transition: all 1s ease-in-out;
   }
 }
